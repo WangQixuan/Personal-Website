@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Sensitive Data Encryptor</title>
+    <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link rel="bookmark" href="assets/img/favicon.ico" type="image/x-icon"/>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://dictumwang.github.io/NMR-PeakFinder/bootstrap.min.css">
+    <script type="text/javascript" src="https://dictumwang.github.io/NMR-PeakFinder/bootstrap.min.js"></script>
+    <script src="js/crypto-js.min.js"></script>
+    <script type="text/javascript">
+        function change_data_type() {
+            var box_text = $("#input_group_text"), box_file = $("#input_group_file");
+            switch ($("#data_type").val()) {
+                case "text":
+                    box_text.show();
+                    box_file.hide();
+                    break;
+                case "file":
+                    box_text.hide();
+                    box_file.show();
+                    break;
+            }
+        }
+
+        function encrypt() {
+            switch ($("#data_type").val()) {
+                case "text":
+                    $("#encrypt_result").val(CryptoJS.AES.encrypt($("#encrypt_text").val(), CryptoJS.enc.Utf8.parse($("#encrypt_key").val()), {
+                        mode: CryptoJS.mode.ECB,
+                        padding: CryptoJS.pad.Pkcs7
+                    }).toString());
+                    break;
+                case "file":
+                    var reader = new FileReader();
+                    reader.readAsArrayBuffer($("#encrypt_file")[0].files[0]);
+                    reader.onload = function () {
+                        $("#encrypt_result").val(CryptoJS.enc.Base64.stringify(CryptoJS.AES.encrypt(CryptoJS.lib.WordArray.create(reader.result), CryptoJS.enc.Utf8.parse($("#encrypt_key").val()), {
+                            mode: CryptoJS.mode.ECB,
+                            padding: CryptoJS.pad.Pkcs7
+                        }).ciphertext));
+                    };
+                    break;
+            }
+        }
+
+        $(function () {
+            change_data_type();
+        });
+    </script>
+    <style>
+        html, body {
+            margin: 0 auto;
+            padding: 0;
+            min-width: 800px;
+            background-color: rgba(230, 230, 250, 0.1);
+        }
+
+        #dlgbox {
+            margin: 5% auto 5%;
+            padding: 2% 5%;
+            width: 460px;
+        }
+
+        .input_label {
+            display: inline-block;
+            width: 60px;
+            vertical-align: top;
+        }
+
+        .input_group {
+            padding: 5px 0;
+            vertical-align: middle;
+        }
+
+        .input_group input[type=text], textarea, select {
+            width: 240px;
+        }
+
+        #encrypt_text, #encrypt_result {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        form {
+            vertical-align: middle;
+        }
+
+        .btn-group {
+            margin: 5px auto;
+        }
+
+        .btn {
+            width: 70px;
+        }
+
+        .footer {
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body class="container">
+<div class="jumbotron" id="dlgbox">
+    <h2 class="text-center">Sensitive Data Encryptor</h2>
+    <form id="encrypt_form" onsubmit="return false">
+        <div class="input_group">
+            <label class="input_label" for="encrypt_key">
+                Key:
+            </label>
+            <input id="encrypt_key" name="encrypt_key" type="text">
+        </div>
+        <div class="input_group">
+            <label class="input_label" for="data_type">
+                Type:
+            </label>
+            <select id="data_type" name="data_type" required="required" onchange="change_data_type();">
+                <option value="text">Text</option>
+                <option value="file">File</option>
+            </select>
+        </div>
+        <div class="input_group" id="input_group_text">
+            <label class="input_label" for="encrypt_text">
+                Data:
+            </label>
+            <textarea id="encrypt_text" name="encrypt_text"></textarea>
+        </div>
+        <div class="input_group" id="input_group_file">
+            <label class="input_label" for="encrypt_file">
+                File:
+            </label>
+            <input id="encrypt_file" type="file" name="encrypt_file" required="required" style="display: inline-block;">
+        </div>
+        <div class="input_group">
+            <label class="input_label" for="encrypt_result">
+                Result:
+            </label>
+            <textarea id="encrypt_result" name="encrypt_result" readonly="readonly"></textarea>
+        </div>
+        <div class="text-center input_group">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" onclick="encrypt()">Encrypt</button>
+            </div>
+        </div>
+    </form>
+    <h5 class="text-left">
+        <b class="input_label">Author:</b> <a href="https://qixuan.wang" target="_blank">Qixuan Wang</a>
+    </h5>
+</div>
+<div class="footer">
+    <hr>
+    <footer>
+        <p class="text-center">© 2024 - WangQixuan, All Rights Reserved</p>
+    </footer>
+</div>
+</body>
+</html>
