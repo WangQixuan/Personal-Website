@@ -6,42 +6,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.wangqixuan.cn/</loc>
-<lastmod>2024-05-04T16:53:20-00:00</lastmod>
+<lastmod>2024-05-31T21:50:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.wangqixuan.cn/404.html</loc>
-<lastmod>2024-05-04T16:53:20-00:00</lastmod>
+<lastmod>2024-05-31T21:50:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.wangqixuan.cn/archives.html</loc>
-<lastmod>2024-05-04T16:53:20-00:00</lastmod>
+<lastmod>2024-05-31T21:50:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.wangqixuan.cn/author/qixuan-wang.html</loc>
-<lastmod>2024-05-04T16:53:20-00:00</lastmod>
+<lastmod>2024-05-31T21:50:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.wangqixuan.cn/authors.html</loc>
-<lastmod>2024-05-04T16:53:20-00:00</lastmod>
+<lastmod>2024-05-31T21:50:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.wangqixuan.cn/blogs/</loc>
-<lastmod>2024-05-04T16:53:20-00:00</lastmod>
+<lastmod>2024-05-31T21:50:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -55,14 +55,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.wangqixuan.cn/categories.html</loc>
-<lastmod>2024-05-04T16:53:20-00:00</lastmod>
+<lastmod>2024-05-31T21:50:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.wangqixuan.cn/category/publications.html</loc>
-<lastmod>2024-05-04T16:53:20-00:00</lastmod>
+<lastmod>2024-05-31T21:50:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -75,22 +75,29 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://www.wangqixuan.cn/pages/link.html</loc>
+<lastmod>2024-05-31T21:46:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://www.wangqixuan.cn/search.html</loc>
-<lastmod>2024-05-04T16:53:20-00:00</lastmod>
+<lastmod>2024-05-31T21:50:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.wangqixuan.cn/tag/total-syntheses.html</loc>
-<lastmod>2024-05-04T16:53:20-00:00</lastmod>
+<lastmod>2024-05-31T21:50:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.wangqixuan.cn/tags.html</loc>
-<lastmod>2024-05-04T16:53:20-00:00</lastmod>
+<lastmod>2024-05-31T21:50:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
